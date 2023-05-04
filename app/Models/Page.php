@@ -10,7 +10,7 @@ class Page extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'slug', 'content', 'image', 'image_alt'];
+    protected $fillable = ['title', 'slug', 'content', 'menu_title', 'image', 'image_alt'];
 
     public function menus(): BelongsTo
     {
