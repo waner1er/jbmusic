@@ -17,6 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-
 Route::get('/cours', [App\Http\Controllers\PageController::class, 'index'])->name('pages.index');
 Route::get('/{page:slug}', [App\Http\Controllers\PageController::class, 'show'])->name('pages.show');

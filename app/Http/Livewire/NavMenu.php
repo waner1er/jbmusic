@@ -7,8 +7,8 @@ use Livewire\Component;
 
 class NavMenu extends Component
 {
-
     public $items;
+
     public $logo;
 
     public function mount()

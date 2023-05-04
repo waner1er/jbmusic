@@ -2,25 +2,17 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Forms;
-use App\Models\Page;
-use Filament\Tables;
-use Filament\Resources\Form;
-use Filament\Resources\Table;
-use Filament\Resources\Resource;
-use Filament\Forms\Components\Section;
-use FilamentTiptapEditor\TiptapEditor;
-use Filament\Forms\Components\Textarea;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\RichEditor;
-use Illuminate\Database\Eloquent\Builder;
-use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\PageResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Camya\Filament\Forms\Components\TitleWithSlugInput;
-use App\Filament\Resources\PageResource\RelationManagers;
+use App\Models\Page;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
+use Camya\Filament\Forms\Components\TitleWithSlugInput;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\TextInput;
+use Filament\Resources\Form;
+use Filament\Resources\Resource;
+use Filament\Resources\Table;
+use Filament\Tables;
+use FilamentTiptapEditor\TiptapEditor;
 
 class PageResource extends Resource
 {
@@ -45,7 +37,7 @@ class PageResource extends Resource
                             ->label('Menu Title'),
                         CuratorPicker::make('image')
                             ->label('Image'),
-                        TiptapEditor::make('content')
+                        TiptapEditor::make('content'),
                     ]),
             ]);
     }

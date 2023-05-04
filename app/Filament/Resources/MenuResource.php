@@ -2,20 +2,15 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Forms;
-use App\Models\Menu;
-use Filament\Tables;
-use Filament\Resources\Form;
-use Filament\Resources\Table;
-use Tables\Columns\TextColumn;
-use Filament\Resources\Resource;
-use Filament\Forms\Components\TextInput;
-use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\MenuResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\MenuResource\RelationManagers;
+use App\Models\Menu;
 use App\Models\Page;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Resources\Form;
+use Filament\Resources\Resource;
+use Filament\Resources\Table;
+use Filament\Tables;
 use Filament\Tables\Columns\TextInputColumn;
 
 class MenuResource extends Resource
@@ -37,7 +32,7 @@ class MenuResource extends Resource
                     ->options(Page::all()->pluck('title', 'slug')->toArray()),
                 TextInput::make('order_id')
                     ->numeric()
-                    ->default(Menu::count() + 1)
+                    ->default(Menu::count() + 1),
 
             ]);
     }
