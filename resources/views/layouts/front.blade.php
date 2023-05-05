@@ -10,17 +10,19 @@
     @livewireStyles
 </head>
 
-<body class="antialiased flex flex-col justify-between min-h-screen">
+<body class="antialiased flex flex-col justify-between min-h-screen ">
     <div>
         @livewire('nav-menu')
         @if (isset($header))
-            <header class="bg-white shadow">
+            <header class="">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
+                    <h1 class="font-semibold text-2xl text-gray-800 leading-tight mx-auto text-center">
+                        {{ $header }}
+                    </h1>
                 </div>
             </header>
         @endif
-        {{$slot}}
+            {{ $slot }}
     </div>
     <x-footer />
     @livewireScripts

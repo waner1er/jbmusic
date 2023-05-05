@@ -1,3 +1,3 @@
 <x-front-layout>
-    contact
+    @livewire('contact-form')
 </x-front-layout>
