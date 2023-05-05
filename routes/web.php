@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\CourseController;
-use App\Http\Controllers\PrestationController;
-use App\Http\Controllers\ResourceController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\MidiPlayerController;
+use App\Http\Controllers\PrestationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/midi', [MidiPlayerController::class, 'index'])->name('midi.index');
+    Route::get('/midi/{id}', [MidiPlayerController::class, 'show'])->name('midi.show');
 });
 
 require __DIR__.'/auth.php';
