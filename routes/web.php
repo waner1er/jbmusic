@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PrestationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +20,22 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/cours', [App\Http\Controllers\PageController::class, 'index'])->name('pages.index');
-Route::get('/{page:slug}', [App\Http\Controllers\PageController::class, 'show'])->name('pages.show');
+Route::get('/cours', [CourseController::class, 'index'])->name('courses.index');
+Route::get('/cours/{course:slug}', [CourseController::class, 'show'])->name('courses.show');
+
+Route::get('/prestations',[PrestationController::class, 'index'])->name('prestations.index');
+Route::get('/prestations/{prestation:slug}', [PrestationController::class, 'show'])->name('prestations.show');
+
+Route::get('/contact',[ContactController::class, 'contact'])->name('contact');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard')->middleware('auth');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';

@@ -8,9 +8,9 @@
                 </svg>
             </label>
             <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                @foreach ($items as $item)
+                {{-- @foreach ($items as $item)
                     <li><a href="{{ route('pages.show', ['page' => $item->link]) }}">{{ $item->title }}</a></li>
-                @endforeach
+                @endforeach --}}
             </ul>
         </div>
         <a class="btn btn-ghost normal-case text-xl" href="{{ route('home') }}">
@@ -19,12 +19,11 @@
     </div>
     <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
-            @foreach ($items as $item)
-                <li><a href="{{ route('pages.show', ['page' => $item->link]) }}">{{ $item->title }}</a></li>
-            @endforeach
+                <li><a href="{{ route('courses.index') }}">Cours</a></li>
+                <li><a href="{{ route('prestations.index') }}">Prestation</a></li>
         </ul>
     </div>
     <div class="navbar-end">
-        <a class="btn btn-info rounded-xl ">Contact</a>
+        <a class="btn btn-info rounded-xl" href="{{ route('contact')}}">Contact</a>
     </div>
 </div>

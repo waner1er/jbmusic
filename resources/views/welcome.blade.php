@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-front-layout>
     <div class="hero min-h-screen image-full" style="background-image: url('{{ asset('img/guitar.jpg')}}');">
         <div class="hero-overlay bg-opacity-70"></div>
         <div class="hero-content text-center text-neutral-content py-10">
