@@ -3,11 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Level;
 use App\Models\Course;
 use App\Models\Presta;
+use App\Models\Resource;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,5 +24,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Course::factory(10)->create();
         Presta::factory(10)->create();
+
+        Resource::factory(10)->create();
     }
 }

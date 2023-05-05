@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('prestas', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('slug'); 
+            $table->string('slug');
             $table->string('image')->nullable();
             $table->string('image_alt')->nullable();
             $table->text('excerpt');

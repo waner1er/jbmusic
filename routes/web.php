@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\PrestationController;
+use App\Http\Controllers\ResourceController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,16 +24,21 @@ Route::get('/', function () {
 Route::get('/cours', [CourseController::class, 'index'])->name('courses.index');
 Route::get('/cours/{course:slug}', [CourseController::class, 'show'])->name('courses.show');
 
-Route::get('/prestations',[PrestationController::class, 'index'])->name('prestations.index');
+Route::get('/prestations', [PrestationController::class, 'index'])->name('prestations.index');
 Route::get('/prestations/{prestation:slug}', [PrestationController::class, 'show'])->name('prestations.show');
 
-Route::get('/contact',[ContactController::class, 'contact'])->name('contact');
+Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard')->middleware('auth');
 
 Route::middleware('auth')->group(function () {
+
+    Route::get('/resources', [ResourceController::class, 'index'])->name('resources.index');
+    Route::get('/resources/{resource:name}', [ResourceController::class, 'show'])->name('resources.show');
+    Route::get('/mesresources', [ResourceController::class, 'userIndex'])->name('myresources');
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

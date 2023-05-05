@@ -6,15 +6,19 @@ use Livewire\Component;
 
 class CardComponent extends Component
 {
-    public  $img;
-    public  $title;
-    public  $excerpt;
-    public  $pricePerHour;
-    public  $route;
-    public  $routeName;
-    public  $model;
+    public $img;
 
+    public $title;
 
+    public $excerpt;
+
+    public $pricePerHour;
+
+    public $route;
+
+    public $routeName;
+
+    public $model;
 
     public function render()
     {

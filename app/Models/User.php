@@ -53,4 +53,9 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
     {
         return str_ends_with($this->email, '@admin.com');
     }
+
+    public function resources()
+    {
+        return $this->belongsToMany(Resource::class);
+    }
 }

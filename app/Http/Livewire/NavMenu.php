@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Menu;
 use Livewire\Component;
 
 class NavMenu extends Component

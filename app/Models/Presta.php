@@ -20,7 +20,6 @@ class Presta extends Model
         'hour_price',
         'km_shift',
         'duration',
-        'level_id'
+        'level_id',
     ];
-
 }

@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Presta>
@@ -18,9 +18,9 @@ class PrestaFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $title =$this->faker->sentence(3),
+            'title' => $title = $this->faker->sentence(3),
             'slug' => Str::slug($title),
-            'image' => $this->faker->imageUrl(640, 480, 'animals', true),
+            'image' => '',
             'image_alt' => $this->faker->sentence(3),
             'excerpt' => $this->faker->sentence(3),
             'content' => $this->faker->sentence(3),
