@@ -44,8 +44,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/midi', [MidiPlayerController::class, 'index'])->name('midi.index');
-    Route::get('/midi/{id}', [MidiPlayerController::class, 'show'])->name('midi.show');
+    Route::get('/songs', [MidiPlayerController::class, 'index'])->name('songs.index');
+    Route::get('/songs/{song:slug}', [MidiPlayerController::class, 'show'])->name('songs.show');
 });
 
 require __DIR__.'/auth.php';

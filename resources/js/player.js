@@ -1,10 +1,18 @@
+import './bootstrap';
+
+import Alpine from 'alpinejs';
+
+window.Alpine = Alpine;
+
+Alpine.start();
   // load elements
   const wrapper = document.querySelector(".at-wrap");
   const main = wrapper.querySelector(".at-main");
-
-  // initialize alphatab
+  const song = document.getElementById("song");
+  console.log(song.innerHTML);
   const settings = {
-    file: "https://www.alphatab.net/files/canon.gp",
+    // file: "https://www.alphatab.net/files/canon.gp",
+    file: song.innerHTML,
     player: {
       enablePlayer: true,
       soundFont: "https://cdn.jsdelivr.net/npm/@coderline/alphatab@latest/dist/soundfont/sonivox.sf2",

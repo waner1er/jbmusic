@@ -1,5 +1,7 @@
 <x-player-layout>
-
+<div id="song" >
+    {{ $songEnDur }}
+</div>
     <div class="at-wrap ">
         <div class="at-overlay">
           <div class="at-overlay-content">
