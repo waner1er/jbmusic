@@ -2,16 +2,18 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\SongResource\Pages;
 use App\Models\Song;
 use App\Models\User;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
-use Filament\Resources\Form;
-use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Resources\Form;
+use Filament\Resources\Table;
+use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
+use App\Forms\Components\CustomUploadFile;
+use App\Filament\Resources\SongResource\Pages;
 
 class SongResource extends Resource
 {
@@ -25,17 +27,11 @@ class SongResource extends Resource
             ->schema([
                 TextInput::make('name')->autofocus()->required(),
                 TextInput::make('slug')->autofocus()->required(),
-                Select::make('file')
-                    ->options(function() {
-                        $songs = scandir(public_path('midi'));
-                        $tests = collect($songs);
-
-                        return $tests->filter(function($song) {
-                            return strpos($song, '.gp3') !== false;
-                        })->toArray();
-                        return $song;
-                    })
-                    ->placeholder('Select a file'),
+                FileUpload::make('file')
+                    ->preserveFilenames()
+                    ->directory('midi')
+                    ->visibility('public')
+                    ->required(),
 
                 Select::make('users')
                     ->relationship('users', 'name')
