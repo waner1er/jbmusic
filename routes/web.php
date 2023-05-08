@@ -1,11 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\MidiPlayerController;
 use App\Http\Controllers\PrestationController;
+use App\Http\Controllers\ResourceController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------

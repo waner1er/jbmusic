@@ -2,20 +2,15 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Forms;
+use App\Filament\Resources\SongResource\Pages;
 use App\Models\Song;
 use App\Models\User;
-use Filament\Tables;
-use Filament\Resources\Form;
-use Filament\Resources\Table;
-use Filament\Resources\Resource;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Illuminate\Database\Eloquent\Builder;
-use App\Filament\Resources\SongResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\SongResource\RelationManagers;
-use Filament\Forms\Components\FileUpload;
+use Filament\Resources\Form;
+use Filament\Resources\Resource;
+use Filament\Resources\Table;
+use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 
 class SongResource extends Resource
@@ -28,12 +23,20 @@ class SongResource extends Resource
     {
         return $form
             ->schema([
-               TextInput::make('name')->autofocus()->required(),
+                TextInput::make('name')->autofocus()->required(),
                 TextInput::make('slug')->autofocus()->required(),
-                FileUpload::make('file')
-                ->directory('songs')
-                ->required(),
-                
+                Select::make('file')
+                    ->options(function() {
+                        $songs = scandir(public_path('midi'));
+                        $tests = collect($songs);
+
+                        return $tests->filter(function($song) {
+                            return strpos($song, '.gp3') !== false;
+                        })->toArray();
+                        return $song;
+                    })
+                    ->placeholder('Select a file'),
+
                 Select::make('users')
                     ->relationship('users', 'name')
                     ->multiple()
@@ -49,7 +52,8 @@ class SongResource extends Resource
                 TextColumn::make('name'),
                 TextColumn::make('slug'),
                 TextColumn::make('users.name')
-                ->label('Users'),
+                    ->label('Users'),
+                TextColumn::make('file'),
             ])
             ->filters([
                 //
@@ -61,14 +65,14 @@ class SongResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -76,5 +80,5 @@ class SongResource extends Resource
             'create' => Pages\CreateSong::route('/create'),
             'edit' => Pages\EditSong::route('/{record}/edit'),
         ];
-    }    
+    }
 }

@@ -1,6 +1,6 @@
 <x-player-layout>
 <div id="song" >
-    {{ $songEnDur }}
+    {{ $song->file() }} => ici je veux le path du fichier visé
 </div>
     <div class="at-wrap ">
         <div class="at-overlay">
