@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\MidiPlayerController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\PrestationController;
 use App\Http\Controllers\ResourceController;
 use Illuminate\Support\Facades\Route;
@@ -18,9 +19,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+//Route::get('/', function () {
+//    return view('welcome');
+//})->name('home');
+Route::get('/', [PageController::class, 'welcome'])->name('home');
+Route::get('/pages/{page:slug}', [PageController::class, 'show'])->name('pages.show');
 
 Route::get('/cours', [CourseController::class, 'index'])->name('courses.index');
 Route::get('/cours/{course:slug}', [CourseController::class, 'show'])->name('courses.show');

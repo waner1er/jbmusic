@@ -12,7 +12,17 @@ class PageController extends Controller
      */
     public function index()
     {
-        //
+        return view('welcome', [
+            'pages' => Page::all(),
+        ]);
+    }
+
+    public function welcome(Page $page)
+    {
+        $welcome = $page->where('slug','=', 'welcome')->first();
+        return view('pages.show', [
+            'page' => $welcome,
+        ]);
     }
 
     /**

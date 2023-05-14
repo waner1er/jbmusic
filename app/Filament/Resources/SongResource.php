@@ -2,24 +2,25 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Resources\SongResource\Pages;
 use App\Models\Song;
 use App\Models\User;
-use Filament\Tables;
-use Filament\Resources\Form;
-use Filament\Resources\Table;
-use Filament\Resources\Resource;
-use Filament\Forms\Components\Select;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
-use App\Forms\Components\CustomUploadFile;
-use App\Filament\Resources\SongResource\Pages;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Resources\Form;
+use Filament\Resources\Resource;
+use Filament\Resources\Table;
+use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 
 class SongResource extends Resource
 {
     protected static ?string $model = Song::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Espace utilisateurs';
+
+    protected static ?string $navigationIcon = 'heroicon-o-music-note';
 
     public static function form(Form $form): Form
     {

@@ -17,7 +17,9 @@ class ResourceResource extends Resource
 {
     protected static ?string $model = ResourceModel::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Espace utilisateurs';
+
+    protected static ?string $navigationIcon = 'heroicon-o-book-open';
 
     public static function form(Form $form): Form
     {

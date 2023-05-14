@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="lofi">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="cmyk">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Laravel</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/guitar.jpg') }}">
     @vite(['resources/js/app.js', 'resources/css/app.css'])
     @livewireStyles
 </head>
 
-<body class="antialiased flex flex-col justify-between min-h-screen ">
+<body class="antialiased flex flex-col justify-between min-h-screen font-press-start ">
     <div>
         @livewire('nav-menu')
         @if (isset($header))

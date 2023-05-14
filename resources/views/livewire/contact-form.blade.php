@@ -1,4 +1,4 @@
-<div class="w-10/12 mx-auto mt-10">
+<div class="w-10/12 mx-auto mt-10 z-10">
 
     <form method="post" action="#" wire:submit.prevent="submit">
 

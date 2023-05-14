@@ -1,0 +1,11 @@
+name: jbmusic
+recipe: laravel
+config:
+    php: '8.1'
+    webroot: public
+services:
+  node:
+    type: node:18
+tooling:
+  npm:
+    service: node

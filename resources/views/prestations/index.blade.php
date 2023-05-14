@@ -8,7 +8,7 @@
         nesciunt distinctio quia assumenda deleniti nihil exercitationem explicabo quo quod, ex voluptate aperiam earum
         sapiente?
     </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 p-5">
+        <div class="grid grid-cols-1 gap-5 p-5 {{$prestations->count() <= 2 ? 'md:grid-cols-fifty-fifty': 'md:grid-cols-auto-column'}}" >
         @foreach ($prestations as $prestation)
             @livewire('card-component', [
                 'prestation' => $prestation,

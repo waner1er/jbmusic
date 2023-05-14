@@ -17,7 +17,7 @@ class Song extends Model
         return $this->belongsToMany(User::class, 'song_users', 'song_id', 'user_id');
     }
 
-    public function file() 
+    public function file()
     {
         $file = $this->file;
         $files = scandir(public_path('midi'));
