@@ -1,5 +1,5 @@
 <x-player-layout>
-<div id="song" >
+<div id="song" hidden>
     {{ asset('storage/' . $song->file()) }}
 </div>
     <div class="at-wrap ">
