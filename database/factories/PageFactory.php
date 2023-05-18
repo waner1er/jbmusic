@@ -17,7 +17,11 @@ class PageFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => $name = $this->faker->name(),
+            'slug' => $name,
+            'intro' => $this->faker->text(255),
+            'content' => $this->faker->text(),
+            'image' => '1',
         ];
     }
 }

@@ -3,9 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CourseResource\Pages;
-use App\Filament\Resources\CourseResource\RelationManagers;
 use App\Models\Course;
-use App\Models\Level;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Camya\Filament\Forms\Components\TitleWithSlugInput;
 use Filament\Forms;
@@ -15,13 +13,13 @@ use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
 use FilamentTiptapEditor\TiptapEditor;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CourseResource extends Resource
 {
     protected static ?string $model = Course::class;
+
     protected static ?string $navigationGroup = 'catégories ';
+
     protected static ?string $navigationIcon = 'heroicon-o-play';
 
     protected static ?string $label = 'Cours';
@@ -49,7 +47,7 @@ class CourseResource extends Resource
                                 Forms\Components\Select::make('level_id')
                                     ->relationship('level', 'name'),
                                 CuratorPicker::make('image')
-                                ->helperText('dimension 1920x1080'),
+                                    ->helperText('dimension 1920x1080'),
                             ])
                             ->columns(1)
                             ->columnSpan(1),

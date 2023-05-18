@@ -4,16 +4,18 @@ namespace App\Http\Livewire;
 
 use App\Mail\ContactMail;
 use App\Models\Contact;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\View\View;
 use Livewire\Component;
 
 class ContactForm extends Component
 {
-    public $name;
+    public string $name;
 
-    public $email;
+    public string $email;
 
-    public $msg = '';
+    public string $msg = '';
 
     protected $rules = [
         'name' => 'bail|required',
@@ -21,7 +23,7 @@ class ContactForm extends Component
         'msg' => 'bail|required',
     ];
 
-    public function submit()
+    public function submit(): RedirectResponse
     {
         $this->validate();
 
@@ -39,7 +41,7 @@ class ContactForm extends Component
         return redirect()->route('contact');
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.contact-form');
     }

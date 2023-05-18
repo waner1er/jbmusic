@@ -1,6 +1,6 @@
 <x-front-layout>
     <section class="bg-white dark:bg-gray-900">
-        @if($page->slug === 'welcome')
+        @if( $page && $page->slug === 'welcome')
             <div class="grid max-w-screen-xl px-4 py-8 mx-10 lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
                 <div class="mr-auto place-self-center lg:col-span-6 flex flex-col justify-center">
                     <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
@@ -32,6 +32,7 @@
                         {{ $page->content }}
                     </p>
                 </div>
+
                 <x-curator-glider :media="$page->image" class="object-cover w-full mx-auto"/>
             </div>
         @endif

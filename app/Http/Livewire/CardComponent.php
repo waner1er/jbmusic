@@ -2,25 +2,26 @@
 
 namespace App\Http\Livewire;
 
+use Illuminate\Contracts\View\View;
 use Livewire\Component;
 
 class CardComponent extends Component
 {
-    public $img;
+    public string $img;
 
-    public $title;
+    public string $title;
 
-    public $excerpt;
+    public string $excerpt;
 
-    public $pricePerHour;
+    public int $pricePerHour;
 
-    public $route;
+    public string $route;
 
-    public $routeName;
+    public string $routeName;
 
-    public $model;
+    public string $model;
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.card-component');
     }

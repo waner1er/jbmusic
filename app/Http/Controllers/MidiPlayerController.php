@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Song;
+use Illuminate\View\View;
 
 class MidiPlayerController extends Controller
 {
-    public function index()
+    public function index(): View
     {
         //    $path = public_path('midi');
         //    $songs = scandir($path);
@@ -22,7 +23,7 @@ class MidiPlayerController extends Controller
         return view('player.index', ['songs' => Song::all()]);
     }
 
-    public function show(Song $song)
+    public function show(Song $song): View
     {
         $songEnDur = asset('midi/the-beatles-lady_madonna.gp3');
 

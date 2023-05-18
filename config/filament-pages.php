@@ -110,7 +110,7 @@ return [
     'templates' => [
         DefaultTemplate::class,
         CustomPageTemplate::class,
-//        BlogTemplate::class
+        //        BlogTemplate::class
     ],
 
     /*

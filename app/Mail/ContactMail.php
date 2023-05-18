@@ -12,16 +12,16 @@ class ContactMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $name;
+    public string $name;
 
-    public $email;
+    public string $email;
 
-    public $msg;
+    public string $msg;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($name, $email, $msg)
+    public function __construct(string $name, string $email, string $msg)
     {
         $this->name = $name;
         $this->email = $email;
@@ -58,7 +58,7 @@ class ContactMail extends Mailable
         return [];
     }
 
-    public function build()
+    public function build(): self
     {
         // On retourne le sujet et la  vue
         return $this->subject('Contact depuis mon site')->view('mails.contact-mail');
