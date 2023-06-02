@@ -4,4 +4,6 @@
             {{ $prestation->title }}
         </h1>
     @endslot
+
+
 </x-front-layout>

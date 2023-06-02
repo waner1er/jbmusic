@@ -21,6 +21,8 @@ class CardComponent extends Component
 
     public string $model;
 
+    public string $slug;
+
     public function render(): View
     {
         return view('livewire.card-component');

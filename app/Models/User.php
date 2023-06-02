@@ -53,9 +53,14 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
         return $this->avatar_url;
     }
 
+    public function role(): belongsToMany
+    {
+        return $this->belongsToMany(Role::class, 'role_user', 'user_id', 'role_id');
+    }
+
     public function canAccessFilament(): bool
     {
-        return str_ends_with($this->email, '@admin.com');
+        return $this->role->contains('name', 'admin');
     }
 
     public function resources(): BelongsToMany

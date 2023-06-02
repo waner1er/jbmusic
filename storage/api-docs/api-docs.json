@@ -1,0 +1,77 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Page API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/page": {
+            "get": {
+                "summary": "Get all pages",
+                "operationId": "62f3ecf13fefa53779075f92e9d88e48",
+                "responses": {
+                    "200": {
+                        "description": "Get all pages"
+                    }
+                }
+            }
+        },
+        "/api/page/{page}": {
+            "get": {
+                "summary": "Get a page by id",
+                "operationId": "2e358a9013cb495a99bc3caa2ef250cf",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "path",
+                        "description": "id of page",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get a page by id"
+                    }
+                }
+            }
+        },
+        "/api/presta": {
+            "get": {
+                "summary": "Get all presta",
+                "operationId": "c90941ac52a3558d5fd936e193ddf6fc",
+                "responses": {
+                    "200": {
+                        "description": "Get all presta"
+                    }
+                }
+            }
+        },
+        "/api/presta/{presta}": {
+            "get": {
+                "summary": "Get a presta by id",
+                "operationId": "c028c1173e7c144161704fc297ce4dd1",
+                "parameters": [
+                    {
+                        "name": "presta",
+                        "in": "path",
+                        "description": "id of presta",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get a presta by id"
+                    }
+                }
+            }
+        }
+    }
+}

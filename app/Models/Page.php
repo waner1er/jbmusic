@@ -14,6 +14,7 @@ class Page extends Model
         'slug',
         'intro',
         'content',
+        'subtitle',
         'image',
         'is_published',
     ];

@@ -7,7 +7,8 @@
 
     <title>Laravel</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('img/guitar.jpg') }}">
-    @vite(['resources/js/app.js', 'resources/css/app.css'])
+    @vite(['resources/js/app.js', 'resources/css/app.scss'])
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     @livewireStyles
 </head>
 

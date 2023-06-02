@@ -5,11 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Page;
 use Illuminate\Contracts\View\View;
 
+/**
+ * @OA\Info(
+ *    title="Page API",
+ *    version="1.0.0",
+ * )
+ */
 class PageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index(): View
     {
         return view('welcome', [
