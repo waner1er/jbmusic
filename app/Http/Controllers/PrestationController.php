@@ -16,7 +16,7 @@ class PrestationController extends Controller
 
     public function show(Presta $prestation): View
     {
-//        dd($prestation);
+        //        dd($prestation);
         return view('prestations.show', ['prestation' => $prestation]);
     }
 }

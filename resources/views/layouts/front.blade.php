@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Laravel</title>
+    <link rel="stylesheet" href="">title>{{ config('app.name') }}</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('img/guitar.jpg') }}">
     @vite(['resources/js/app.js', 'resources/css/app.scss'])
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>

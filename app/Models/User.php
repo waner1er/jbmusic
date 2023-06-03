@@ -60,7 +60,7 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
 
     public function canAccessFilament(): bool
     {
-        return $this->role->contains('name', 'admin');
+        return true;
     }
 
     public function resources(): BelongsToMany

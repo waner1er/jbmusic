@@ -3,12 +3,12 @@
     "file": "assets/module.esm-9e7b5893.js"
   },
   "resources/css/app.scss": {
-    "file": "assets/app-6a344fe1.css",
+    "file": "assets/app-41769205.css",
     "isEntry": true,
     "src": "resources/css/app.scss"
   },
   "resources/css/player.css": {
-    "file": "assets/player-835afbd5.css",
+    "file": "assets/player-c66f9f07.css",
     "isEntry": true,
     "src": "resources/css/player.css"
   },

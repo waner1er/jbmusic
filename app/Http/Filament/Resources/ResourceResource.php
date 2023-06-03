@@ -2,7 +2,6 @@
 
 namespace App\Http\Filament\Resources;
 
-use App\Filament\Resources\ResourceResource\Pages;
 use App\Models\Resource as ResourceModel;
 use App\Models\User;
 use Awcodes\Curator\Components\Forms\CuratorPicker;

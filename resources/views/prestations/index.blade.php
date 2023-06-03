@@ -12,7 +12,7 @@
 
     <div class="grid grid-cols-1 gap-5 p-5 {{$prestations->count() <= 2 ? 'md:grid-cols-fifty-fifty': 'md:grid-cols-auto-column'}}">
         @foreach ($prestations as $prestation)
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-auto">
+            <div class="max-w-sm w-9/12 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-auto">
                 @if (!empty($prestation->image) && is_int($prestation->image))
                     <x-curator-glider :media="$prestation->image" class="object-cover w-full h-64"/>
                 @endif

@@ -2,7 +2,6 @@
 
 namespace App\Http\Filament\Resources;
 
-use App\Filament\Resources\PageResource\Pages;
 use App\Models\Page;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Camya\Filament\Forms\Components\TitleWithSlugInput;

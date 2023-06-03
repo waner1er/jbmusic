@@ -2,8 +2,6 @@
 
 namespace App\Http\Filament\Resources;
 
-use App\Filament\Resources\UserResource\Pages;
-use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\Role;
 use App\Models\User;
 use Filament\Forms;
@@ -34,7 +32,7 @@ class UserResource extends Resource
                     ->placeholder(__('Email')),
                 'role' => Forms\Components\Select::make('role')
                     ->options(Role::all()->pluck('name', 'id')->toArray())
-                    ->multiple()
+                    ->multiple(),
             ]);
     }
 
@@ -54,14 +52,14 @@ class UserResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -69,5 +67,5 @@ class UserResource extends Resource
             'create' => \App\Http\Filament\Resources\UserResource\Pages\CreateUser::route('/create'),
             'edit' => \App\Http\Filament\Resources\UserResource\Pages\EditUser::route('/{record}/edit'),
         ];
-    }    
+    }
 }
